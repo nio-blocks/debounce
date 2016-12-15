@@ -7,7 +7,7 @@ from nio.properties import TimeDeltaProperty, VersionProperty
 
 class Debounce(GroupBy, Block):
 
-    interval = TimeDeltaProperty(title='Debounce Interval', allow_none=True,
+    interval = TimeDeltaProperty(title='Debounce Interval',
                                  default={'days': 0, 'seconds': 1,
                                           'microseconds': 0})
     version = VersionProperty('0.1.0')
