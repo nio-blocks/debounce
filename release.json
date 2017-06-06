@@ -1,0 +1,7 @@
+{
+  "nio/Debounce": {
+    "Language": "Python",
+    "Version": "1.0.0",
+    "Reference": "github.com/nio-blocks/debounce.git@v1.0.0"
+  }
+}
