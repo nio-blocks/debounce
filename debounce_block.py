@@ -20,7 +20,7 @@ class Debounce(GroupBy, Block):
         """Check configured interval and return a signal if valid."""
         now = datetime.utcnow()
         if self._last_emission[group] is None or \
-                now - self._last_emission[group] > self.interval():
+                now - self._last_emission[group] > self.interval(signals[-1]):
             self._last_emission[group] = now
             return signals[:1]
         else:
