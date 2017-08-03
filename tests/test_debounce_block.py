@@ -53,3 +53,19 @@ class TestDebounce(NIOBlockTestCase):
         self.assertTrue(self.last_notified[DEFAULT_TERMINAL][0].group == 'bar')
         self.assertTrue(self.last_notified[DEFAULT_TERMINAL][1].group == 'foo')
         self.assertTrue(self.last_notified[DEFAULT_TERMINAL][2].group == 'bar')
+
+    def test_debounce_signal_interval(self):
+        """Test that signals are properly debounce for dynamically set interval."""
+        block = Debounce()
+        block._backup = MagicMock()
+        self.configure_block(block, {
+            "interval": "{{ datetime.timedelta(milliseconds=$interval) }}"
+        })
+        block.start()
+        block.process_signals([Signal({'interval': 200}), Signal({'interval': 200})])
+        block.process_signals([Signal({'interval': 200})])
+        self.assert_num_signals_notified(1, block)
+        sleep(.3)
+        block.process_signals([Signal({'interval': 200})])
+        self.assert_num_signals_notified(2, block)
+        block.stop()
