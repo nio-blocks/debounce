@@ -1,5 +1,6 @@
 from collections import defaultdict
 from datetime import datetime
+
 from nio.block.base import Block
 from nio.block.mixins.group_by.group_by import GroupBy
 from nio.properties import TimeDeltaProperty, VersionProperty
