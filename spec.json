@@ -1,7 +1,7 @@
 {
   "nio/Debounce": {
     "version": "0.1.0",
-    "description": "After a signal flows through the block, filter out following signals for [interval] seconds.",
+    "description": "The Debounce block will filter out signals for [interval] seconds after a signal flows through the block.",
     "categories": [
       "Signal Flow"
     ],
@@ -9,7 +9,7 @@
       "group_by": {
         "title": "Group By",
         "type": "Type",
-        "description": "The value by which signals are grouped.",
+        "description": "Signal attribute to define groupings of incoming signals.",
         "default": null
       },
       "interval": {

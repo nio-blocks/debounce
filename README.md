@@ -1,10 +1,10 @@
 Debounce
 ========
-After a signal flows through the block, filter out following signals for [interval] seconds.
+The Debounce block will filter out signals for [interval] seconds after a signal flows through the block.
 
 Properties
 ----------
-- **group_by**: The value by which signals are grouped.
+- **group_by**: Signal attribute to define groupings of incoming signals.
 - **interval**: Amount of time to wait before allowing another signal in a matching group.
 
 Inputs
@@ -22,3 +22,4 @@ Commands
 Dependencies
 ------------
 None
+
