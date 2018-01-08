@@ -1,6 +1,6 @@
 {
   "nio/Debounce": {
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "The Debounce block will filter out signals for **interval** seconds after a signal flows through the block.",
     "categories": [
       "Signal Flow"
